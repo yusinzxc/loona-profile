@@ -1,0 +1,48 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow:column;
+}
+*{
+  margin:0;
+  padding: 0;
+}
+.main{
+  height: 100vh;
+  width: 100%;  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  
+  @import './header.scss';
+  @import './content.scss';
+  @import './social-media-bbc.scss';
+}
+.main > *{
+  margin: 10px 0;
+  width: 85%;
+}
+.navigation-container{
+  height: 100vh;
+  width: 100%;
+  background: white;
+  position:fixed;
+  z-index:3;
+  @include center;
+
+  .navigation-content-container{
+   height: 70%;
+   width: 85%;
+   display: grid;
+   grid-template-rows: repeat(5, 1fr);
+   grid-gap:2px;
+  }
+  .navigation-content-container > *{
+    display: grid;
+    place-items: center;
+  }
+}
+

@@ -1,0 +1,32 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow:column;
+}
+.header-container{
+  height: 80px;
+  border-bottom: 0.5px solid black;
+  z-index:4;
+
+  position: relative;
+  .header-logo{
+    height: 80px;
+  }
+  .menu-container{
+    width: 20px;
+    right: 0;
+    bottom: 15px;
+    @include center;
+  }
+  .menu-container > * {
+    height: 1.5px;
+    width: 100%;
+    background: black;
+    margin: 3px;
+  }
+}
+.header-container > *{
+  position:absolute;
+}
+
